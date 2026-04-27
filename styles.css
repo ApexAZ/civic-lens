@@ -163,6 +163,11 @@ header {
   font-weight: 700;
   margin-bottom: 1rem;
 }
+footer {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 1.5rem 1rem;
+}
 
 /* ///ADD/// Global Text Styles */
 
