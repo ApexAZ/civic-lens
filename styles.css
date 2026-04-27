@@ -152,6 +152,17 @@ h2 {
 h3 {
   font-size: 1.125rem;
 }
+header {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 1.5rem 1rem;
+}
+.tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
 /* ///ADD/// Global Text Styles */
 
