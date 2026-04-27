@@ -416,7 +416,15 @@ form button[type="submit"]:hover {
 
 /* ///ADD/// large styles 920px */
 @media (min-width: 920px) {
+  /* Featured articles: 3-column grid */
+  #featured-articles {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
+  /* Checkbox list: 3-column grid */
+  .checkbox-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 
