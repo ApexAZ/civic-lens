@@ -136,7 +136,14 @@ body.dark-mode {
 
 /* ///ADD/// medium styles 620px */
 @media (min-width: 620px) {
-
+  .menu-button {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
 
 
