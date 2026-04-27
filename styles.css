@@ -221,6 +221,14 @@ article h3 {
   object-fit: cover;
   margin-top: 0;
 }
+form {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  border: 2px solid var(--blue-bulletin);
+  padding: 1rem;
+  margin: 0.5rem 0.5rem 1rem;
+  box-shadow: var(--shadow);
+}
 main {
   padding: 2rem 1.5rem;
 }
@@ -228,6 +236,9 @@ main {
   margin-top: 1rem;
 }
 #featured-articles {
+  margin-top: 1.5rem;
+}
+#alerts {
   margin-top: 1.5rem;
 }
 
