@@ -55,6 +55,12 @@ table {
 }
 
 
+/* Universal box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+
 /* Root Variables */
 :root {
   --blue-bulletin: #1D3557;
@@ -177,13 +183,21 @@ blockquote.tagline {
 footer {
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem 0.5rem;
+}
+footer h2 {
+  font-size: 1.375rem;
+  font-weight: 300;
+}
+.copyright {
+  font-size: 0.8125rem;
+  text-align: center;
 }
 .social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
   margin-bottom: 1rem;
 }
 .social-links a {
@@ -191,11 +205,12 @@ footer {
   background-color: var(--news-flash);
   color: var(--watchdog-white);
   font-family: var(--font-body);
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
 }
 article {
   border: 1px solid var(--story-subtitle);
@@ -228,6 +243,62 @@ form {
   padding: 1rem;
   margin: 0.5rem 0.5rem 1rem;
   box-shadow: var(--shadow);
+}
+form > label {
+  display: block;
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+}
+.checkbox-list li {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.checkbox-list li:last-child {
+  margin-bottom: 0;
+}
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.checkbox-list label {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+.checkbox-list input[type="checkbox"] {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+form input[type="text"],
+form input[type="tel"] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  border: none;
+}
+form fieldset {
+  border: 1px solid var(--blue-bulletin);
+  padding: 0.25rem 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+form legend {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
 }
 main {
   padding: 2rem 1.5rem;
