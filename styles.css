@@ -367,6 +367,50 @@ form button[type="submit"]:hover {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
+
+  /* Two-column grids for card sections */
+  #breaking-news,
+  #featured-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  #breaking-news > h2,
+  #featured-articles > h2 {
+    grid-column: 1 / -1;
+  }
+  #breaking-news article,
+  #featured-articles article {
+    margin: 0;
+  }
+
+  /* Form: Name/Mobile side-by-side, fieldset/button full width */
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.75rem;
+    grid-template-areas:
+      "name-l   mobile-l"
+      "name-i   mobile-i"
+      "fields   fields"
+      "btn      btn";
+  }
+  form > label[for="name"]   { grid-area: name-l; }
+  form > label[for="mobile"] { grid-area: mobile-l; }
+  form > input#name          { grid-area: name-i; }
+  form > input#mobile        { grid-area: mobile-i; }
+  form > fieldset            { grid-area: fields; }
+  form > button              { grid-area: btn; }
+
+  /* Checkbox list 2-column */
+  .checkbox-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .checkbox-list li {
+    margin-bottom: 0;
+  }
 }
 
 
