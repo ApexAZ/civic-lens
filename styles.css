@@ -5,7 +5,7 @@
 
 /* ///ADD/// CSS Reset */
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -19,8 +19,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -31,7 +31,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -109,6 +109,9 @@ body.dark-mode {
 }
 
 /* ///ADD/// Navigation Styles */
+.mobile-nav {
+  position: relative;
+}
 .menu-button {
   display: block;
   background-color: var(--news-flash);
@@ -117,8 +120,13 @@ body.dark-mode {
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
-  padding: 0.75rem 1rem;
-  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--blue-bulletin);
+  transition: var(--transition);
+}
+.menu-button:hover {
+  background-color: var(--blue-bulletin);
+  border-color: var(--news-flash);
 }
 .menu {
   display: none;
@@ -128,14 +136,22 @@ body.dark-mode {
   background-color: var(--news-flash);
   color: var(--watchdog-white);
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--blue-bulletin);
+  transition: var(--transition);
+}
+.menu a:hover {
+  background-color: var(--blue-bulletin);
+  border-color: var(--news-flash);
 }
 
 /* ///ADD/// Global Layout Styles */
+
+/* Body & headings */
 body {
   background-color: var(--watchdog-white);
   color: var(--truth-text);
@@ -145,7 +161,6 @@ body {
 }
 h1, h2, h3 {
   font-family: var(--font-heading);
-  font-weight: 700;
   line-height: 1.2;
 }
 h1 {
@@ -154,16 +169,18 @@ h1 {
 }
 h2 {
   font-size: 1.625rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0.5rem 0 0.25rem;
+}
+h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 p {
   font-weight: 400;
 }
-h3 {
-  font-size: 1.125rem;
-  font-weight: 900;
-}
+
+/* Header band */
 header {
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
@@ -180,6 +197,8 @@ blockquote.tagline {
   font-weight: 800;
   padding: 1rem;
 }
+
+/* Footer band */
 footer {
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
@@ -211,18 +230,44 @@ footer h2 {
   text-align: center;
   text-decoration: none;
   padding: 0.5rem 0.75rem;
+  border: 2px solid var(--blue-bulletin);
+  transition: var(--transition);
 }
+.social-links a:hover {
+  background-color: var(--blue-bulletin);
+  border-color: var(--news-flash);
+}
+
+/* Main content area */
+main {
+  padding: 2rem 1.5rem;
+}
+#breaking-news {
+  margin-top: 1rem;
+}
+#featured-articles {
+  margin-top: 1.5rem;
+}
+#alerts {
+  margin-top: 1.5rem;
+}
+
+/* Article cards */
 article {
   border: 1px solid var(--story-subtitle);
   padding: 0.75rem 1rem;
   margin: 0 0.5rem 0.5rem;
   box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+article:hover {
+  transform: scale(1.05);
 }
 article h3 {
   font-size: 1.3125rem;
   font-weight: 400;
   line-height: 1.5;
-  border-bottom: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor; /* currentColor: MDN color_value docs */
   padding-bottom: 0;
   margin-bottom: 0.5rem;
 }
@@ -236,6 +281,8 @@ article h3 {
   object-fit: cover;
   margin-top: 0;
 }
+
+/* Form */
 form {
   background-color: var(--news-flash);
   color: var(--watchdog-white);
@@ -248,38 +295,6 @@ form > label {
   display: block;
   font-size: 0.8125rem;
   margin-bottom: 0.25rem;
-}
-.checkbox-list li {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.checkbox-list li:last-child {
-  margin-bottom: 0;
-}
-form button[type="submit"] {
-  display: block;
-  width: 100%;
-  background-color: var(--blue-bulletin);
-  color: var(--watchdog-white);
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-bottom: 0.5rem;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-}
-.checkbox-list label {
-  font-size: 0.875rem;
-  line-height: 1;
-}
-.checkbox-list input[type="checkbox"] {
-  width: 1.125rem;
-  height: 1.125rem;
 }
 form input[type="text"],
 form input[type="tel"] {
@@ -300,17 +315,43 @@ form legend {
   font-weight: 600;
   padding: 0 0.5rem;
 }
-main {
-  padding: 2rem 1.5rem;
+.checkbox-list li {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-#breaking-news {
-  margin-top: 1rem;
+.checkbox-list li:last-child {
+  margin-bottom: 0;
 }
-#featured-articles {
-  margin-top: 1.5rem;
+.checkbox-list label {
+  font-size: 0.875rem;
+  line-height: 1;
 }
-#alerts {
-  margin-top: 1.5rem;
+.checkbox-list input[type="checkbox"] {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--blue-bulletin); /* MDN CSS Reference index */
+}
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+}
+form button[type="submit"]:hover {
+  background-color: var(--watchdog-white);
+  color: var(--blue-bulletin);
 }
 
 /* ///ADD/// Global Text Styles */
@@ -346,5 +387,14 @@ main {
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+  .mobile-nav:has(#menu--toggle:checked) .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: var(--shadow);
+  }
 }
