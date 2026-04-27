@@ -87,7 +87,15 @@ body.dark-mode {
   cursor: pointer;
 }
 
-/* ///ADD/// Skip Link Styles */
+/* Skip Link Styles */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 /* ///ADD/// Navigation Styles */
 
